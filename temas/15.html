@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 70%;
+            margin: 0 auto;
+            font-family: arial, sans-serif;
+        }
+    </style>
+
+    <!-- CSS VIDEO BIENVENIDA -->
+    <style>
+        /* Video de bienvenida futurista */
+        .video_bienvenida {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px auto;
+            background: radial-gradient(circle, rgba(255, 0, 150, 1) 0%, rgba(0, 204, 255, 1) 100%);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .video_bienvenida:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.9), 0 0 100px rgba(255, 255, 255, 0.7);
+        }
+
+        .video_bienvenida iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .video_bienvenida iframe:hover {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+
+    <!-- CSS VIDEOS MEDIA -->
+    <style>
+        .media {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .videos {
+            flex-basis: 48%;
+            background: linear-gradient(135deg, #ff6f00, #ff8e53);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .videos:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .videos h3 {
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+            color: #FFFFFF;
+        }
+
+        .videos iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 315px;
+        }
+    </style>
+
+
+    <!-- CSS INTRODUCCIÓN, DEFINICIONES, EJEMPLOS -->
+    <style>
+        /* Introducción y definiciones */
+        .introduccion,
+        .definiciones,
+        .ejemplos {
+            margin: 0 20px;
+            font-size: 17px;
+            text-align: justify;
+            color: #333333;
+            background: linear-gradient(to right, #e0f7fa, #fce4ec, #fff9c4);
+            /* Degradado de tres colores bajos */
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
+            /* Evita que el texto se salga del contenedor */
+        }
+
+        .introduccion h2,
+        .definiciones h2,
+        .ejemplos h2 {
+            text-align: left;
+        }
+
+        h2,
+        h3 {
+            color: #ff6347;
+            /* Color de los títulos */
+            font-size: 26px;
+            /* Tamaño de fuente de los títulos */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- AUDIOOOOOO INICIOOOOOOOOO -->
+    <style>
+        .audio_mensaje {
+            display: flex;
+            align-items: center;
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+        }
+
+        .audio_mensaje button {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+
+        .audio_mensaje button:hover {
+            background-color: #00ffcc;
+            color: #1a1a1a;
+            transform: scale(1.1);
+        }
+
+        .audio_mensaje button:active {
+            transform: scale(0.9);
+        }
+    </style>
+
+
+    <!-- CSS IMÁGENES -->
+    <style>
+        /* Para las imágenes */
+        .flex-img,
+        .flex-img2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .flex-img img,
+        .flex-img2 img {
+            max-width: 45%;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .flex-img img:hover,
+        .flex-img2 img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .flex-img img:active,
+        .flex-img2 img:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+
+
+    <!-- CSS AUDIO INTRODUCCIÓN -->
+    <style>
+        .audio_t1 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 5px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .audio_t1 audio {
+            width: 100%;
+            outline: none;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-panel {
+            background: linear-gradient(135deg, #222 0%, #555 100%);
+            border-radius: 10px;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-play-button,
+        .audio_t1 audio::-webkit-media-controls-current-time-display,
+        .audio_t1 audio::-webkit-media-controls-time-remaining-display,
+        .audio_t1 audio::-webkit-media-controls-timeline,
+        .audio_t1 audio::-webkit-media-controls-volume-slider,
+        .audio_t1 audio::-webkit-media-controls-mute-button {
+            filter: drop-shadow(0 0 5px #00ffcc);
+        }
+
+        .audio_t1 audio::-webkit-media-controls-volume-control-container {
+            background: rgba(0, 255, 204, 0.1);
+            border-radius: 5px;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-mute-button,
+        .audio_t1 audio::-webkit-media-controls-play-button {
+            border-radius: 50%;
+            background: rgba(0, 255, 204, 0.1);
+            transition: background 0.3s;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-mute-button:hover,
+        .audio_t1 audio::-webkit-media-controls-play-button:hover {
+            background: rgba(0, 255, 204, 0.3);
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .title_audio {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color: #333;
+            animation: moveText 2s infinite;
+            display: inline-block;
+        }
+    </style>
+
+    <!-- TEX IZQUIERDA-VIDEO DERECHA-->
+    <style>
+        /* Contenedor principal para el texto y el video */
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Estilo para el texto a la izquierda */
+        .texto_izquierda {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        /* Contenedor del video con encabezado */
+        .video_derecha {
+            flex-basis: 40%;
+            background: linear-gradient(135deg, #4cc431, #ff8e53);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Animación al pasar el mouse */
+        .video_derecha:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilo del encabezado */
+        .video_derecha h3 {
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+            color: #FFFFFF;
+        }
+
+        /* Estilo del video embebido */
+        .video_derecha iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 220px;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .video_derecha iframe {
+                height: 150px;
+            }
+        }
+    </style>
+
+    <!-- VIDEO IZQUIERDA-TEXTO DERECHA -->
+    <style>
+        /* Contenedor principal para el video a la izquierda y el texto a la derecha */
+        .contenedor2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Estilo para el video a la izquierda */
+        .video_isquierda {
+            flex-basis: 40%;
+            background: linear-gradient(135deg, #6de324, #ff8e53);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Animación al pasar el mouse */
+        .video_isquierda:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilo del encabezado */
+        .video_isquierda h3 {
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+            color: #FFFFFF;
+        }
+
+        /* Estilo del video embebido */
+        .video_isquierda iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 220px;
+        }
+
+        /* Estilo para el texto a la derecha */
+        .texto_derecha {
+            flex: 1;
+            max-width: 50%;
+            text-align: justify;
+            font-size: 17px;
+            color: black;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .video_isquierda iframe {
+                height: 150px;
+            }
+        }
+    </style>
+
+    <!-- TEXT INSTRUCIÓ- AUDIO -->
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .word {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .futuristic-button {
+            background: linear-gradient(45deg, #42a5f5, #478ed1, #3d76c3);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .futuristic-button:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: opacity 0.5s;
+        }
+
+        .futuristic-button:hover:before {
+            opacity: 1;
+        }
+
+        .futuristic-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .futuristic-button:active {
+            transform: scale(0.95);
+        }
+
+        .animacion_aparecer_Letra {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- BTN PAGINA -->
+    <style>
+        .btn_pag {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button_siguiente {
+            background: linear-gradient(90deg, #56ab2f, #a8e063);
+            /* Cambié los colores a un degradado verde */
+            border: none;
+            border-radius: 15px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_siguiente a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button_siguiente:hover {
+            background: linear-gradient(90deg, #a8e063, #56ab2f);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button_siguiente:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Retroceder */
+        .button_retroceder {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            /* Cambié los colores a un degradado azul */
+            border: none;
+            border-radius: 15px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_retroceder a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button_retroceder:hover {
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button_retroceder:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<br>
+<br>
+<br>
+<button class="button_siguiente"><a href="/home.html">Volver a inicio</a></button>
+
+<body> <!-- INICIO BODY -->
+    <header>
+        <center>
+            <h1 class="titulo">CONVERSIONES DE MEDIDAS SUPERFICE METRO<SUP>2</SUP></h1>
+        </center>
+    </header>
+    <br>
+    <div class="contenido"> <!-- INICIO DIV CONTENIDO GENERAL -->
+        <div class="video_bienvenida">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/o15Ie7H8Uws" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <br>
+        <h2 class="titulo"><strong>INTRODUCCIÓN</strong></h2>
+        <div class="texto introduccion">
+            <p>Hola bienvenid@s.</p>
+            <h2 class="title_audio">Reprodúceme</h2>
+            <div class="audio_mensaje">
+                <button id="play_btn"><i class="fas fa-play"></i></button>
+                <button id="stop_btn"><i class="fas fa-stop"></i></button>
+            </div>
+
+
+            <br>
+            <div class="flex-img2">
+                <img src="/images/T1/2.jpg" style="height: 300px; border-radius: 10px">
+                <img src="/images/T1/28.jpg" style="height: 300px; border-radius: 10px">
+            </div>
+        </div>
+        <br>
+        <h2 class="titulo"><strong>MEDIDAS DE SUPERFICIE</strong></h2>
+        <div class="texto definiciones">
+            <div class="contenedor">
+                <p class="texto_izquierda">
+                    <br>
+                    <br>
+                    <br>
+                    <strong>¡Superficies Geniales! 🌟📏</strong><br>
+                    Descubre cómo medir áreas de forma divertida. 😊✨ Por ejemplo, 1 metro cuadrado es como un gran
+                    cuadrado de 1x1 metro! 🚀🎢
+                </p>
+                <div class="video_derecha">
+                    <h3>Concepto</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_bPsWz0D1H0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="contenedor2">
+                <div class="video_isquierda">
+                    <h3>Aplicaciones</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/pRShUPMLysk" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p class="texto_derecha">
+                    <br>
+                    <br>
+                    <br>
+                    <strong>¡Exploradores de Superficie! 🎉</strong><br>
+                    Aprende a calcular áreas y diviértete. 🧙‍♂️ Por ejemplo, el área de un triángulo es base por altura
+                    dividido por 2. 🎢✨
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="btn_pag">
+            <center>
+                <button class="button_siguiente"><a href="/temas/16.html">¡Siguiente!👉</a></button>
+            </center>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button class="button_siguiente"><a href="/home.html">Volver a inicio</a></button>
+
+    </div><!-- FIN DIV CONTENIDO GENERAL -->
+
+
+</body> <!--   FIN   BODY -->
+
+</html>
+
+<!-- JS AUDIO INICIOOOOOOO-->
+<script>
+    let utterance;
+    let isPaused = false;
+
+    document.getElementById('play_btn').addEventListener('click', function () {
+        const text = "¡Hola, exploradores ! Aquí aprenderán sobre las conversiones de superficie y el metro cuadrado. Primero, descubrirán cómo medir áreas de forma divertida con nuestros videos..¡Vamos a convertir y medir superficies mientras nos divertimos!";
+        if (!utterance || !isPaused) {
+            utterance = new SpeechSynthesisUtterance(text);
+
+            // Obtener las voces disponibles y seleccionar una voz en español
+            const voices = window.speechSynthesis.getVoices();
+            const spanishVoice = voices.find(voice => voice.lang.startsWith('es'));
+
+            if (spanishVoice) {
+                utterance.voice = spanishVoice;
+            } else {
+                alert("No se encontró una voz en español en este navegador.");
+            }
+
+            // Configurar propiedades adicionales para la síntesis de voz
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+
+            // Reproducir el texto sintetizado
+            window.speechSynthesis.speak(utterance);
+        } else {
+            window.speechSynthesis.resume();
+        }
+        isPaused = false;
+    });
+
+    document.getElementById('stop_btn').addEventListener('click', function () {
+        if (utterance) {
+            window.speechSynthesis.cancel();
+            utterance = null;
+            isPaused = false;
+        }
+    });
+
+    // Asegurarse de que las voces estén cargadas antes de usarlas
+    window.speechSynthesis.onvoiceschanged = function () {
+        const voices = window.speechSynthesis.getVoices();
+    };
+
+</script>

@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 70%;
+            margin: 0 auto;
+            font-family: arial, sans-serif;
+        }
+    </style>
+
+    <!-- CSS VIDEO BIENVENIDA -->
+    <style>
+        /* Video de bienvenida futurista */
+        .video_bienvenida {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 20px auto;
+            background: radial-gradient(circle, rgba(255, 0, 150, 1) 0%, rgba(0, 204, 255, 1) 100%);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .video_bienvenida:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.9), 0 0 100px rgba(255, 255, 255, 0.7);
+        }
+
+        .video_bienvenida iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .video_bienvenida iframe:hover {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+
+    <!-- CSS VIDEOS MEDIA -->
+    <style>
+        .media {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .videos {
+            flex-basis: 48%;
+            background: linear-gradient(135deg, #ff6f00, #ff8e53);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .videos:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .videos h3 {
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+            color: #FFFFFF;
+        }
+
+        .videos iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 315px;
+        }
+    </style>
+
+
+    <!-- CSS INTRODUCCIÓN, DEFINICIONES, EJEMPLOS -->
+    <style>
+        /* Introducción y definiciones */
+        .introduccion,
+        .definiciones,
+        .ejemplos {
+            margin: 0 20px;
+            font-size: 17px;
+            text-align: justify;
+            color: #333333;
+            background: linear-gradient(to right, #e0f7fa, #fce4ec, #fff9c4);
+            /* Degradado de tres colores bajos */
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
+            /* Evita que el texto se salga del contenedor */
+        }
+
+        .introduccion h2,
+        .definiciones h2,
+        .ejemplos h2 {
+            text-align: left;
+        }
+
+        h2,
+        h3 {
+            color: #ff6347;
+            /* Color de los títulos */
+            font-size: 26px;
+            /* Tamaño de fuente de los títulos */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- AUDIOOOOOO INICIOOOOOOOOO -->
+    <style>
+        .audio_mensaje {
+            display: flex;
+            align-items: center;
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+        }
+
+        .audio_mensaje button {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+
+        .audio_mensaje button:hover {
+            background-color: #00ffcc;
+            color: #1a1a1a;
+            transform: scale(1.1);
+        }
+
+        .audio_mensaje button:active {
+            transform: scale(0.9);
+        }
+    </style>
+
+
+    <!-- CSS IMÁGENES -->
+    <style>
+        /* Para las imágenes */
+        .flex-img,
+        .flex-img2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .flex-img img,
+        .flex-img2 img {
+            max-width: 45%;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .flex-img img:hover,
+        .flex-img2 img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .flex-img img:active,
+        .flex-img2 img:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+
+
+    <!-- CSS AUDIO INTRODUCCIÓN -->
+    <style>
+        .audio_t1 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 5px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .audio_t1 audio {
+            width: 100%;
+            outline: none;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-panel {
+            background: linear-gradient(135deg, #222 0%, #555 100%);
+            border-radius: 10px;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-play-button,
+        .audio_t1 audio::-webkit-media-controls-current-time-display,
+        .audio_t1 audio::-webkit-media-controls-time-remaining-display,
+        .audio_t1 audio::-webkit-media-controls-timeline,
+        .audio_t1 audio::-webkit-media-controls-volume-slider,
+        .audio_t1 audio::-webkit-media-controls-mute-button {
+            filter: drop-shadow(0 0 5px #00ffcc);
+        }
+
+        .audio_t1 audio::-webkit-media-controls-volume-control-container {
+            background: rgba(0, 255, 204, 0.1);
+            border-radius: 5px;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-mute-button,
+        .audio_t1 audio::-webkit-media-controls-play-button {
+            border-radius: 50%;
+            background: rgba(0, 255, 204, 0.1);
+            transition: background 0.3s;
+        }
+
+        .audio_t1 audio::-webkit-media-controls-mute-button:hover,
+        .audio_t1 audio::-webkit-media-controls-play-button:hover {
+            background: rgba(0, 255, 204, 0.3);
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .title_audio {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color: #333;
+            animation: moveText 2s infinite;
+            display: inline-block;
+        }
+    </style>
+
+    <!-- TEX IZQUIERDA-VIDEO DERECHA-->
+    <style>
+        /* Contenedor principal para el texto y el video */
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Estilo para el texto a la izquierda */
+        .texto_izquierda {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        /* Contenedor del video con encabezado */
+        .video_derecha {
+            flex-basis: 40%;
+            background: linear-gradient(135deg, #4cc431, #ff8e53);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Animación al pasar el mouse */
+        .video_derecha:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilo del encabezado */
+        .video_derecha h3 {
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+            color: #FFFFFF;
+        }
+
+        /* Estilo del video embebido */
+        .video_derecha iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 220px;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .video_derecha iframe {
+                height: 150px;
+            }
+        }
+    </style>
+
+    <!-- VIDEO IZQUIERDA-TEXTO DERECHA -->
+    <style>
+        /* Contenedor principal para el video a la izquierda y el texto a la derecha */
+        .contenedor2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Estilo para el video a la izquierda */
+        .video_isquierda {
+            flex-basis: 40%;
+            background: linear-gradient(135deg, #6de324, #ff8e53);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Animación al pasar el mouse */
+        .video_isquierda:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilo del encabezado */
+        .video_isquierda h3 {
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0;
+            color: #FFFFFF;
+        }
+
+        /* Estilo del video embebido */
+        .video_isquierda iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 220px;
+        }
+
+        /* Estilo para el texto a la derecha */
+        .texto_derecha {
+            flex: 1;
+            max-width: 50%;
+            text-align: justify;
+            font-size: 17px;
+            color: black;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .video_isquierda iframe {
+                height: 150px;
+            }
+        }
+    </style>
+
+    <!-- TEXT INSTRUCIÓ- AUDIO -->
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .word {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .futuristic-button {
+            background: linear-gradient(45deg, #42a5f5, #478ed1, #3d76c3);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .futuristic-button:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: opacity 0.5s;
+        }
+
+        .futuristic-button:hover:before {
+            opacity: 1;
+        }
+
+        .futuristic-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .futuristic-button:active {
+            transform: scale(0.95);
+        }
+
+        .animacion_aparecer_Letra {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- CSS GAMES -->
+    <!-- CSS GAMES -->
+    <style>
+        /* CSS Futurista e Infantil para el Juego de Adivinanza de Raíces Cuadradas */
+        .contenido_centro {
+            text-align: center;
+            background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 15px #a1ffce;
+            color: #333333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contenido_centro p {
+            font-size: 18px;
+        }
+
+        .contenido_centro input[type="text"] {
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #77dd77;
+            border-radius: 10px;
+            outline: none;
+            box-shadow: 0 0 10px #a1ffce;
+            animation: pulse 1.5s infinite;
+            transition: transform 0.3s;
+        }
+
+        .contenido_centro input[type="text"]:focus {
+            transform: scale(1.1);
+        }
+
+        .contenido_centro button {
+            background: #77dd77;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+
+        .contenido_centro button:hover {
+            background: #a1ffce;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #77dd77;
+        }
+
+        #intentosRestantes,
+        #resultadoJuego {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .correcto {
+            color: green;
+        }
+
+        .incorrecto {
+            color: red;
+        }
+
+        /* CSS para el Overlay */
+        #overlayjuego5 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(68, 119, 94, 0.36);
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            z-index: 1000;
+            flex-direction: column;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #overlayjuego5 p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #overlayjuego5 button {
+            background: #77dd77;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+        }
+
+        #overlayjuego5 button:hover {
+            background: #a1ffce;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #77dd77;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px #a1ffce;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #a1ffce;
+            }
+
+            100% {
+                box-shadow: 0 0 10px #a1ffce;
+            }
+        }
+    </style>
+
+    <!-- BTN PAGINA -->
+    <style>
+        .btn_pag {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button_siguiente {
+            background: linear-gradient(90deg, #56ab2f, #a8e063);
+            /* Cambié los colores a un degradado verde */
+            border: none;
+            border-radius: 15px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_siguiente a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button_siguiente:hover {
+            background: linear-gradient(90deg, #a8e063, #56ab2f);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button_siguiente:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Retroceder */
+        .button_retroceder {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            /* Cambié los colores a un degradado azul */
+            border: none;
+            border-radius: 15px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button_retroceder a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button_retroceder:hover {
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button_retroceder:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+
+
+
+</head>
+<br>
+<br>
+<br>
+<button class="button_siguiente"><a href="/home.html">Volver a inicio</a></button>
+
+<body> <!-- INICIO BODY -->
+    <header>
+        <center>
+            <h1 class="titulo">RESOLUCIÓN DE PROLEMAS </h1>
+        </center>
+    </header>
+    <br>
+    <div class="contenido"> <!-- INICIO DIV CONTENIDO  GENERAL -->
+        <div class="video_bienvenida">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iZbFCtdH6LQ" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <br>
+        <h2 class="titulo"><strong>MEDIDAS SUPERFICIE</strong></h2>
+        <div class="texto introduccion">
+
+            <p>Hola bienvenid@s.</p>
+
+            <h2 class="title_audio">Reprodúceme</h2>
+
+            <div class="audio_mensaje">
+                <button id="play_btn"><i class="fas fa-play"></i></button>
+                <button id="stop_btn"><i class="fas fa-stop"></i></button>
+            </div>
+
+            <br>
+            <!--
+             <div class="flex-img2">
+                <img src="{% static 'images/T1/17.jpg' %}" style="height: 300px; border-radius: 10px">
+                <img src="{% static 'images/T1/18.jpg' %}" style="height: 300px; border-radius: 10px">
+            </div>
+            -->
+
+
+        </div>
+
+        <br>
+
+        <h2 class="titulo"><strong>RESOLUCIÓN DE PROBLEMAS</strong></h2>
+        <div class="texto definiciones">
+            <div class="contenedor">
+                <p class="texto_izquierda">
+                    <br><br><br>
+                    <strong>¡Convertir Superficies es Fácil! 📏✨</strong><br>
+                    Aprende a convertir metros cuadrados a otras unidades. 🔄 1 m<sup>2</sup> es igual a 10,000
+                    cm<sup>2</sup> y 1,000,000 mm<sup>2</sup>. ¡Descubre más conversiones y hazlo divertido! 🌟📐
+                </p>
+                <div class="video_derecha">
+                    <h3>Ejercicio 1</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rpMsN1aA17M?rel=0"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="contenedor2">
+                <div class="video_isquierda">
+                    <h3>Ejercicio 2</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3QfZyu8_N1c?rel=0"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <p class="texto_derecha">
+                    <br><br><br>
+                    <strong>¡Fiesta de Conversiones! 🎉🌍</strong><br>
+                    1 m<sup>2</sup> equivale a 0.0001 ha o 0.000001 km<sup>2</sup>. ¡Convierte medidas y descubre un
+                    mundo nuevo de superficies! 🚀🔍
+                </p>
+            </div>
+        </div>
+
+
+
+        <br>
+        <br>
+        <!-- INICIO DEL JUEGO DE NÚMEROS NATURALES -->
+        <h2 class="titulo"><strong>🌟🦁 ¡RETO FELINO! 🦁 🌟</strong></h2>
+        <div class="texto definiciones">
+            <div class="contenedor">
+                <div class="texto_derecha">
+                    <div class="animacion_aparecer_Letra">
+                        <button class="futuristic-button" onclick="mostrarInstrucciones()">¿Cómo se juega?</button><br>
+                        <p id="instrucciones" class="hidden">
+                            <br>
+                            ¡Únete al Reto Felino! 🦁✨ Responde preguntas sobre conversiones de medidas de superficie y
+                            ayuda a nuestros amigos felinos. 🐱🔢 Cada respuesta correcta te lleva a otro conjunto de
+                            preguntas.
+                            ¡Aprende y diviértete! 🚀📏¡Vamos, demuestra tus habilidades y ayuda a los felinos a ganar!
+                            🌟🧠
+                        </p>
+                    </div>
+                </div>
+
+                <div class="img_isquierda">
+                    <img src="/images/T1/n.gif" style="height: 300px; border-radius: 10px">
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+
+        <div class="contenido_centro">
+            <center>
+                <div>
+                    <p id="problema" style="font-size: 18px; font-weight: bold;"></p>
+                    <div class="botones-container">
+                        <input type="text" id="numeroUsuario" class="boton" placeholder="Ingresa la respuesta">
+                        <button id="botonAdivinar" class="boton">Verificar</button>
+                    </div>
+                    <center>
+                        <p id="intentosRestantes"></p>
+                    </center>
+                    <center>
+                        <p id="resultadoJuego"></p>
+                    </center>
+                </div>
+                <div id="overlayjuego5">
+                    <div id="mensajeTexto" style="font-size: 20px;"></div>
+                    <p>¿Desea seguir jugando?</p>
+                    <button id="btnSi">Sí</button>
+                    <button id="btnNo">No</button>
+                </div>
+
+            </center>
+        </div>
+
+        <div class="btn_pag">
+            <center>
+                <button class="button_retroceder"><a href="/temas/16.html">👈¡Retroceder!</a></button>
+
+            </center>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <button class="button_siguiente"><a href="/home.html">Volver a inicio</a></button>
+
+
+    </div><!-- FIN  DIV CONTENIDO  GENERAL -->
+</body> <!--   FIN   BODY -->
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const ejercicios = [
+
+            { pregunta: "¿Cuántos centímetros cuadrados hay en 1 metro cuadrado?", respuesta: 10000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 2.2 ares?", respuesta: 220 },
+            { pregunta: "Convierte 5 metros cuadrados a centímetros cuadrados.", respuesta: 50000 },
+            { pregunta: "¿Cuántos decímetros cuadrados hay en 1 metro cuadrado?", respuesta: 100 },
+            { pregunta: "Convierte 3 metros cuadrados a decímetros cuadrados.", respuesta: 300 },
+            { pregunta: "¿Cuántos milímetros cuadrados hay en 1 metro cuadrado?", respuesta: 1000000 },
+            { pregunta: "Convierte 0.5 metros cuadrados a milímetros cuadrados.", respuesta: 500000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 1 kilómetro cuadrado?", respuesta: 1000000 },
+            { pregunta: "Convierte 2 kilómetros cuadrados a metros cuadrados.", respuesta: 2000000 },
+            { pregunta: "¿Cuántos hectómetros cuadrados hay en 1 kilómetro cuadrado?", respuesta: 100 },
+            { pregunta: "Convierte 4 hectómetros cuadrados a metros cuadrados.", respuesta: 400000 },
+            { pregunta: "¿Cuántos decámetros cuadrados hay en 1 hectómetro cuadrado?", respuesta: 100 },
+            { pregunta: "Convierte 1.5 hectómetros cuadrados a decámetros cuadrados.", respuesta: 150 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 1 hectárea?", respuesta: 10000 },
+            { pregunta: "Convierte 7 hectáreas a metros cuadrados.", respuesta: 70000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 1 are?", respuesta: 100 },
+            { pregunta: "Convierte 12 ares a metros cuadrados.", respuesta: 1200 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 1 centiárea?", respuesta: 1 },
+            { pregunta: "Convierte 50 centiáreas a metros cuadrados.", respuesta: 50 },
+            { pregunta: "¿Cuántos centímetros cuadrados hay en 2 metros cuadrados?", respuesta: 20000 },
+            { pregunta: "Convierte 8 metros cuadrados a centímetros cuadrados.", respuesta: 80000 },
+            { pregunta: "¿Cuántos decímetros cuadrados hay en 5 metros cuadrados?", respuesta: 500 },
+            { pregunta: "Convierte 0.2 metros cuadrados a decímetros cuadrados.", respuesta: 20 },
+            { pregunta: "¿Cuántos milímetros cuadrados hay en 3 metros cuadrados?", respuesta: 3000000 },
+            { pregunta: "Convierte 1.25 metros cuadrados a milímetros cuadrados.", respuesta: 1250000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 0.5 kilómetros cuadrados?", respuesta: 500000 },
+            { pregunta: "Convierte 3.5 kilómetros cuadrados a metros cuadrados.", respuesta: 3500000 },
+            { pregunta: "¿Cuántos hectómetros cuadrados hay en 0.75 kilómetros cuadrados?", respuesta: 75 },
+            { pregunta: "Convierte 2.2 hectómetros cuadrados a metros cuadrados.", respuesta: 220000 },
+            { pregunta: "¿Cuántos decámetros cuadrados hay en 0.8 hectómetros cuadrados?", respuesta: 80 },
+            { pregunta: "Convierte 1.6 hectómetros cuadrados a decámetros cuadrados.", respuesta: 160 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 0.9 hectáreas?", respuesta: 9000 },
+            { pregunta: "Convierte 0.25 hectáreas a metros cuadrados.", respuesta: 2500 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 1.5 ares?", respuesta: 150 },
+            { pregunta: "Convierte 7.5 ares a metros cuadrados.", respuesta: 750 },
+            { pregunta: "Convierte 25 centiáreas a metros cuadrados.", respuesta: 25 },
+            { pregunta: "¿Cuántos centímetros cuadrados hay en 3.5 metros cuadrados?", respuesta: 35000 },
+            { pregunta: "Convierte 9 metros cuadrados a centímetros cuadrados.", respuesta: 90000 },
+            { pregunta: "¿Cuántos decímetros cuadrados hay en 4.5 metros cuadrados?", respuesta: 450 },
+            { pregunta: "Convierte 0.75 metros cuadrados a decímetros cuadrados.", respuesta: 75 },
+            { pregunta: "¿Cuántos milímetros cuadrados hay en 6.5 metros cuadrados?", respuesta: 6500000 },
+            { pregunta: "Convierte 1.8 metros cuadrados a milímetros cuadrados.", respuesta: 1800000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 2.5 kilómetros cuadrados?", respuesta: 2500000 },
+            { pregunta: "Convierte 4.1 kilómetros cuadrados a metros cuadrados.", respuesta: 4100000 },
+            { pregunta: "¿Cuántos hectómetros cuadrados hay en 3.2 kilómetros cuadrados?", respuesta: 320 },
+            { pregunta: "Convierte 2.7 hectómetros cuadrados a metros cuadrados.", respuesta: 270000 },
+            { pregunta: "¿Cuántos decámetros cuadrados hay en 5 hectómetros cuadrados?", respuesta: 500 },
+            { pregunta: "Convierte 1.9 hectómetros cuadrados a decámetros cuadrados.", respuesta: 190 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 6.3 hectáreas?", respuesta: 63000 },
+            { pregunta: "Convierte 8.4 hectáreas a metros cuadrados.", respuesta: 84000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 3.7 ares?", respuesta: 370 },
+            { pregunta: "Convierte 12 ares a metros cuadrados.", respuesta: 1200 },
+            { pregunta: "Convierte 35 centiáreas a metros cuadrados.", respuesta: 35 },
+            { pregunta: "¿Cuántos centímetros cuadrados hay en 4.5 metros cuadrados?", respuesta: 45000 },
+            { pregunta: "Convierte 10 metros cuadrados a centímetros cuadrados.", respuesta: 100000 },
+            { pregunta: "¿Cuántos decímetros cuadrados hay en 7 metros cuadrados?", respuesta: 700 },
+            { pregunta: "Convierte 1.25 metros cuadrados a decímetros cuadrados.", respuesta: 125 },
+            { pregunta: "¿Cuántos milímetros cuadrados hay en 8.5 metros cuadrados?", respuesta: 8500000 },
+            { pregunta: "Convierte 2.4 metros cuadrados a milímetros cuadrados.", respuesta: 2400000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 0.6 kilómetros cuadrados?", respuesta: 600000 },
+            { pregunta: "Convierte 5.3 kilómetros cuadrados a metros cuadrados.", respuesta: 5300000 },
+            { pregunta: "¿Cuántos hectómetros cuadrados hay en 1.2 kilómetros cuadrados?", respuesta: 120 },
+            { pregunta: "Convierte 3.6 hectómetros cuadrados a metros cuadrados.", respuesta: 360000 },
+            { pregunta: "¿Cuántos decámetros cuadrados hay en 4 hectómetros cuadrados?", respuesta: 400 },
+            { pregunta: "Convierte 2 hectómetros cuadrados a decámetros cuadrados.", respuesta: 200 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 7 hectáreas?", respuesta: 70000 },
+            { pregunta: "Convierte 1.75 hectáreas a metros cuadrados.", respuesta: 17500 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 0.3 ares?", respuesta: 30 },
+            { pregunta: "Convierte 10.5 ares a metros cuadrados.", respuesta: 1050 },
+            { pregunta: "Convierte 20 centiáreas a metros cuadrados.", respuesta: 20 },
+            { pregunta: "¿Cuántos centímetros cuadrados hay en 1.5 metros cuadrados?", respuesta: 15000 },
+            { pregunta: "Convierte 15 metros cuadrados a centímetros cuadrados.", respuesta: 150000 },
+            { pregunta: "¿Cuántos decímetros cuadrados hay en 0.8 metros cuadrados?", respuesta: 80 },
+            { pregunta: "Convierte 0.45 metros cuadrados a decímetros cuadrados.", respuesta: 45 },
+            { pregunta: "¿Cuántos milímetros cuadrados hay en 3.7 metros cuadrados?", respuesta: 3700000 },
+            { pregunta: "Convierte 2.75 metros cuadrados a milímetros cuadrados.", respuesta: 2750000 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 1.1 kilómetros cuadrados?", respuesta: 1100000 },
+            { pregunta: "Convierte 6.8 kilómetros cuadrados a metros cuadrados.", respuesta: 6800000 },
+            { pregunta: "¿Cuántos hectómetros cuadrados hay en 0.45 kilómetros cuadrados?", respuesta: 45 },
+            { pregunta: "Convierte 0.95 hectómetros cuadrados a metros cuadrados.", respuesta: 95000 },
+            { pregunta: "¿Cuántos decámetros cuadrados hay en 0.7 hectómetros cuadrados?", respuesta: 70 },
+            { pregunta: "Convierte 3 hectómetros cuadrados a decámetros cuadrados.", respuesta: 300 },
+            { pregunta: "¿Cuántos metros cuadrados hay en 2.8 hectáreas?", respuesta: 28000 },
+            { pregunta: "Convierte 4.9 hectáreas a metros cuadrados.", respuesta: 49000 },
+            { pregunta: "Convierte 9.8 ares a metros cuadrados.", respuesta: 980 },
+            { pregunta: "Convierte 27 centiáreas a metros cuadrados.", respuesta: 27 }
+        ];
+
+
+
+        let ejercicioActual;
+        let intentos;
+        const botonAdivinar = document.getElementById('botonAdivinar');
+        const numeroUsuario = document.getElementById('numeroUsuario');
+        const intentosRestantes = document.getElementById('intentosRestantes');
+        const resultadoJuego = document.getElementById('resultadoJuego');
+        const problema = document.getElementById('problema');
+        const overlay = document.getElementById('overlayjuego5');
+        const btnSi = document.getElementById('btnSi');
+        const btnNo = document.getElementById('btnNo');
+
+        function iniciarJuego() {
+            ejercicioActual = ejercicios[Math.floor(Math.random() * ejercicios.length)];
+            intentos = 3;
+            problema.innerHTML = `¿Cuál es el resultado de ${ejercicioActual.pregunta}?`;
+            intentosRestantes.textContent = `Te quedan ${intentos} intentos.`;
+            intentosRestantes.style.display = 'block';
+            resultadoJuego.textContent = '';
+            resultadoJuego.className = '';
+            numeroUsuario.value = '';
+            botonAdivinar.disabled = false;
+        }
+
+        function mostrarOverlay() {
+            overlay.style.display = 'flex';
+        }
+
+        function ocultarOverlay() {
+            overlay.style.display = 'none';
+        }
+
+        function cuentaRegresiva(callback) {
+            let cuenta = 5;
+            const mensajeTexto = document.getElementById('mensajeTexto');
+            const interval = setInterval(function () {
+                mensajeTexto.textContent = `🌟 Cargando un nuevo problema en  ${cuenta}🌟`;
+                cuenta--;
+                if (cuenta < 0) {
+                    clearInterval(interval);
+                    callback();
+                }
+            }, 1000);
+        }
+
+        botonAdivinar.addEventListener('click', function () {
+            const numero = parseFloat(numeroUsuario.value);
+            if (isNaN(numero)) {
+                resultadoJuego.textContent = '🚫 Por favor, ingresa un número válido. 🚫';
+                resultadoJuego.className = 'incorrecto';
+                return;
+            }
+
+            intentos--;
+            if (numero === ejercicioActual.respuesta) {
+                resultadoJuego.textContent = '🎉 ¡Felicidades! Adivinaste el resultado correcto. 🎉';
+                resultadoJuego.className = 'correcto';
+                botonAdivinar.disabled = true;
+                mostrarOverlay();
+            } else if (intentos > 0) {
+                resultadoJuego.textContent = '❌ Incorrecto. Inténtalo nuevamente. ❌';
+                resultadoJuego.className = 'incorrecto';
+                intentosRestantes.textContent = `Te quedan ${intentos} intentos.`;
+            } else {
+                resultadoJuego.textContent = `💔 ¡Lo siento! Se te acabaron los intentos. El resultado correcto era ${ejercicioActual.respuesta}. 💔`;
+                resultadoJuego.className = 'incorrecto';
+                botonAdivinar.disabled = true;
+                mostrarOverlay();
+            }
+
+            numeroUsuario.value = '';
+        });
+
+        btnSi.addEventListener('click', function () {
+            cuentaRegresiva(function () {
+                ocultarOverlay();
+                iniciarJuego();
+            });
+        });
+
+        btnNo.addEventListener('click', function () {
+            ocultarOverlay();
+            resultadoJuego.textContent = '🏆 ¡Increíble trabajo! 🧠 Gracias por jugar y aprender con nosotros. ¡Sigue así! 🚀';
+            resultadoJuego.className = '';
+            resultadoJuego.style.color = 'green';
+            intentosRestantes.style.display = 'none';
+        });
+
+        iniciarJuego();
+    });
+</script>
+
+<!--   Letra y audio animados -->
+<script>
+    function mostrarInstrucciones() {
+        const instrucciones = document.getElementById('instrucciones');
+        instrucciones.classList.remove('hidden');
+
+        const words = instrucciones.innerText.split(' ');
+        instrucciones.innerHTML = words.map(word => `<span class="word">${word}</span>`).join(' ');
+
+        const wordElements = document.querySelectorAll('.word');
+        const synth = window.speechSynthesis;
+
+        // Restablecer la opacidad de las palabras
+        wordElements.forEach(word => word.style.opacity = '0');
+
+        // Filtrar emojis del texto
+        const textWithoutEmojis = instrucciones.innerText.replace(/[^\p{L}\p{N}\p{P}\p{Z}]/gu, '');
+
+        const utterance = new SpeechSynthesisUtterance(textWithoutEmojis);
+
+        // Cancelar cualquier síntesis de voz en curso
+        synth.cancel();
+
+        // Selecciona una voz en español
+        const voices = synth.getVoices();
+        const spanishVoice = voices.find(voice => voice.lang.startsWith('es'));
+
+        if (spanishVoice) {
+            utterance.voice = spanishVoice;
+        }
+
+        let wordIndex = 0;
+
+        utterance.onboundary = (event) => {
+            if (event.name === 'word') {
+                if (wordIndex < wordElements.length) {
+                    wordElements[wordIndex].style.opacity = '1';
+                    wordIndex++;
+                }
+            }
+        };
+
+        // Esto asegura que las voces estén cargadas antes de intentar seleccionar una
+        if (synth.getVoices().length === 0) {
+            synth.addEventListener('voiceschanged', () => {
+                const voices = synth.getVoices();
+                const spanishVoice = voices.find(voice => voice.lang.startsWith('es'));
+                if (spanishVoice) {
+                    utterance.voice = spanishVoice;
+                    synth.speak(utterance);
+                }
+            });
+        } else {
+            synth.speak(utterance);
+        }
+    }
+</script>
+<!-- JS DEL JUEGO 2 QUE SOLO INGRESE NUMEROS -->
+<script>
+    document.getElementById('numeroUsuario').addEventListener('input', function (event) {
+        let value = event.target.value;
+        event.target.value = value.replace(/[^0-9]/g, '');
+    });
+</script>
+
+
+<script>
+    document.getElementById('baseUsuario-juego2').addEventListener('input', function (event) {
+        let value = event.target.value;
+        event.target.value = value.replace(/[^0-9]/g, '');
+    });
+</script>
+
+
+<script>
+    document.getElementById('exponenteUsuario-juego2').addEventListener('input', function (event) {
+        let value = event.target.value;
+        event.target.value = value.replace(/[^0-9]/g, '');
+    });
+</script>
+
+
+<!-- JS AUDIO INICIOOOOOOO-->
+<script>
+    let utterance;
+    let isPaused = false;
+
+    document.getElementById('play_btn').addEventListener('click', function () {
+        const text = "Aquí aprenderán a convertir metros cuadrados a otras unidades de superficie. Primero, verán videos que explican cómo hacer estas conversiones de manera sencilla y Finalmente, pondrán a prueba sus habilidades en el Reto Felino. ¡Vamos a convertir superficies y disfrutar aprendiendo!";
+        if (!utterance || !isPaused) {
+            utterance = new SpeechSynthesisUtterance(text);
+
+            // Obtener las voces disponibles y seleccionar una voz en español
+            const voices = window.speechSynthesis.getVoices();
+            const spanishVoice = voices.find(voice => voice.lang.startsWith('es'));
+
+            if (spanishVoice) {
+                utterance.voice = spanishVoice;
+            } else {
+                alert("No se encontró una voz en español en este navegador.");
+            }
+
+            // Configurar propiedades adicionales para la síntesis de voz
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+
+            // Reproducir el texto sintetizado
+            window.speechSynthesis.speak(utterance);
+        } else {
+            window.speechSynthesis.resume();
+        }
+        isPaused = false;
+    });
+
+    document.getElementById('stop_btn').addEventListener('click', function () {
+        if (utterance) {
+            window.speechSynthesis.cancel();
+            utterance = null;
+            isPaused = false;
+        }
+    });
+
+    // Asegurarse de que las voces estén cargadas antes de usarlas
+    window.speechSynthesis.onvoiceschanged = function () {
+        const voices = window.speechSynthesis.getVoices();
+    };
+
+</script>
